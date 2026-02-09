@@ -13,9 +13,11 @@ const NavbarLink: FC<NavbarLinkProps> = ({ path, content }) => {
       {({ isActive }) => (
         <div className='relative'>
           <Typography
-            size='xl'
+            size='lg'
             weight='bold'
-            color={isActive ? 'text-amber-500' : 'text-neutral-800'}
+            color={
+              isActive ? 'text-amber-500 -mt-2 lg:mt-0' : 'text-neutral-800'
+            }
             className='hover:text-amber-500 transition duration-150'
           >
             {content}
