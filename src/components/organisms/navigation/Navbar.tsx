@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import MenuItems from './MenuItems';
 import DrawerMenu from './DrawerMenu';
+import UserMenu from './UserMenu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +29,12 @@ const Navbar = () => {
           />
         </div>
         <div className='flex justify-center items-center'>
-          <NavLink to='/'>
+          <NavLink to='/' className='flex justify-center'>
             <img src={appName} className='h-fit max-h-6' />
           </NavLink>
+        </div>
+        <div className='justify-end hidden lg:flex'>
+          <UserMenu />
         </div>
       </div>
 

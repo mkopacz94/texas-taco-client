@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface TypographyProps {
+interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   weight?:
     | 'thin'
@@ -49,11 +49,13 @@ const Typography: React.FC<TypographyProps> = ({
   underline = false,
   className = '',
   htmlFor,
+  ...props
 }) => {
   const Tag = htmlFor ? 'label' : 'p'; // Use <label> if htmlFor exists, otherwise use <p>
 
   return (
     <Tag
+      {...props}
       className={`${color} ${underline ? 'underline' : ''} ${weightClasses[weight]} ${sizeClasses[size]} ${className}`}
       {...(htmlFor ? { htmlFor } : {})} // Conditionally add htmlFor attribute
     >
