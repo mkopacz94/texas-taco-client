@@ -14,7 +14,7 @@ const NavbarLink: FC<NavbarLinkProps> = ({ path, content }) => {
         <div className='relative'>
           <Typography
             size='lg'
-            weight='bold'
+            weight='medium'
             color={
               isActive ? 'text-amber-500 -mt-2 lg:mt-0' : 'text-neutral-800'
             }
