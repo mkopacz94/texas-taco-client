@@ -2,6 +2,7 @@ import { Button } from '@/components/atoms/Button';
 import Typography from '@/components/atoms/Typography';
 import InputWithLabel from '@/components/molecules/InputWithLabel';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 interface SignUpFormData {
   email: string;
@@ -10,6 +11,8 @@ interface SignUpFormData {
 }
 
 const SignUpForm = () => {
+  const { t } = useTranslation();
+
   const {
     register,
     watch,
@@ -28,43 +31,42 @@ const SignUpForm = () => {
       </Typography>
       <div className='flex flex-col space-y-4'>
         <InputWithLabel
-          label='Adres e-mail'
+          label={t('common.emailAddress')}
           {...register('email', {
-            required: 'Wartość w polu jest wymagana',
+            required: t('common.formErrors.fieldRequired'),
             pattern: {
               value: /^\S+@\S+\.\S+$/,
-              message: 'Nieprawidłowy adres e-mail',
+              message: t('auth.formErrors.invalidEmail'),
             },
           })}
           error={errors.email?.message}
         />
         <InputWithLabel
-          label='Hasło'
+          label={t('auth.password')}
           type='password'
           {...register('password', {
-            required: 'Hasło jest wymagane',
+            required: t('common.formErrors.fieldRequired'),
             pattern: {
               value: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/,
-              message:
-                'Hasło musi mieć minimum 8 znaków, zawierać dużą literę, cyfrę i znak specjalny',
+              message: t('auth.formErrors.invalidPasswordStructure'),
             },
           })}
           error={errors.password?.message}
         />
         <InputWithLabel
-          label='Powtórz hasło'
+          label={t('auth.repeatPassword')}
           type='password'
           {...register('confirmPassword', {
-            required: 'Powtórz hasło jest wymagane',
+            required: t('common.formErrors.fieldRequired'),
             validate: (value) =>
-              value === passwordValue || 'Hasła nie są takie same',
+              value === passwordValue || t('auth.formErrors.passwordsDiffer'),
           })}
           error={errors.confirmPassword?.message}
         />
       </div>
 
       <Button disabled={Object.keys(errors).length > 0}>
-        <Typography weight='medium'>Utwórz konto</Typography>
+        <Typography weight='medium'>{t('signUpPage.createAccount')}</Typography>
       </Button>
     </form>
   );

@@ -9,6 +9,7 @@ import { SIGN_UP_PATH } from '@/constants/paths';
 import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SignInDialogContent from '@/components/organisms/signIn/SignInDialogContent';
+import { useTranslation } from 'react-i18next';
 
 interface UserMenuProps {
   className?: string;
@@ -16,6 +17,7 @@ interface UserMenuProps {
 
 const UserMenu: FC<UserMenuProps> = ({ className }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div
@@ -24,7 +26,7 @@ const UserMenu: FC<UserMenuProps> = ({ className }) => {
       <Dialog>
         <DialogTrigger asChild>
           <TextButton
-            text='Logowanie'
+            text={t('navigation.signIn')}
             className='hover:text-amber-500 transition duration-150'
           />
         </DialogTrigger>
@@ -36,7 +38,7 @@ const UserMenu: FC<UserMenuProps> = ({ className }) => {
 
       <Separator orientation='vertical' className='hidden lg:block' />
       <TextButton
-        text='Rejestracja'
+        text={t('navigation.signUp')}
         className='hover:text-amber-500 transition duration-150'
         onClick={() => navigate(SIGN_UP_PATH)}
       />

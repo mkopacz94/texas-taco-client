@@ -1,0 +1,32 @@
+{
+  "auth": {
+    "password": "Hasło",
+    "repeatPassword": "Powtórz hasło",
+    "formErrors": {
+      "invalidEmail": "Nieprawidłowy adres e-mail",
+      "invalidPasswordStructure": "Hasło musi mieć minimum 8 znaków, zawierać dużą literę, cyfrę i znak specjalny",
+      "passwordsDiffer": "Hasła nie są takie same"
+    }
+  },
+  "navigation": {
+    "signUp": "Rejestracja",
+    "signIn": "Logowanie",
+    "order": "Zamów",
+    "menu": "Menu",
+    "prizes": "Nagrody",
+    "locations": "Lokalizacje"
+  },
+  "common": {
+    "emailAddress": "Adres e-mail",
+    "formErrors": {
+      "fieldRequired": "Wartość w polu jest wymagana"
+    }
+  },
+  "signUpPage": {
+    "orderFasterTitle": "ZAMAWIAJ JESZCZE SZYBCIEJ Z KONTEM TEXAS TACO",
+    "savePreferencesMessage": "Zapisz preferencje i adres zamówień",
+    "showOrdersHistoryMessage": "Wyświetlaj historię zamówień",
+    "saveWithPrizesMessage": "Oszczędzaj więcej z nagrodami tylko dla zarejestrowanych użytkowników",
+    "createAccount": "Utwórz konto"
+  }
+}
