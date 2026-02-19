@@ -31,8 +31,14 @@ const UserMenu: FC<UserMenuProps> = ({ className }) => {
           />
         </DialogTrigger>
 
-        <DialogContent className='w-[90%] max-w-200'>
+        <DialogContent className='w-[90%] max-w-220'>
+          <div className='absolute top-0 right-2 w-1/2 flex justify-center'>
+            <div className='bg-amber-400 w-30 h-4 -top-px relative' />
+          </div>
           <SignInDialogContent />
+          <div className='absolute bottom-0 right-2 w-1/2 flex justify-center'>
+            <div className='bg-amber-400 w-30 h-4 -bottom-px relative' />
+          </div>
         </DialogContent>
       </Dialog>
 

@@ -4,30 +4,26 @@ import InputWithLabel from '@/components/molecules/InputWithLabel';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-interface SignUpFormData {
+interface SignInFormData {
   email: string;
   password: string;
-  confirmPassword: string;
 }
 
-const SignUpForm = () => {
+const SignInForm = () => {
   const { t } = useTranslation();
 
   const {
     register,
-    watch,
     formState: { errors },
-  } = useForm<SignUpFormData>({
+  } = useForm<SignInFormData>({
     mode: 'onTouched',
     reValidateMode: 'onChange',
   });
 
-  const passwordValue = watch('password');
-
   return (
     <form className='flex flex-col space-y-8'>
       <Typography weight='medium' size='2xl'>
-        {t('signUpPage.signUp').toUpperCase()}
+        {t('signInPage.signIn').toUpperCase()}
       </Typography>
       <div className='flex flex-col space-y-4'>
         <InputWithLabel
@@ -53,23 +49,13 @@ const SignUpForm = () => {
           })}
           error={errors.password?.message}
         />
-        <InputWithLabel
-          label={t('auth.repeatPassword')}
-          type='password'
-          {...register('confirmPassword', {
-            required: t('common.formErrors.fieldRequired'),
-            validate: (value) =>
-              value === passwordValue || t('auth.formErrors.passwordsDiffer'),
-          })}
-          error={errors.confirmPassword?.message}
-        />
       </div>
 
       <Button disabled={Object.keys(errors).length > 0}>
-        <Typography weight='medium'>{t('signUpPage.createAccount')}</Typography>
+        <Typography weight='medium'>{t('signInPage.logIn')}</Typography>
       </Button>
     </form>
   );
 };
 
-export default SignUpForm;
+export default SignInForm;

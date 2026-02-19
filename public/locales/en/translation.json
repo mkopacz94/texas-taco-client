@@ -1,0 +1,37 @@
+{
+  "auth": {
+    "password": "Password",
+    "repeatPassword": "Repeat password",
+    "formErrors": {
+      "invalidEmail": "Invalid email address",
+      "invalidPasswordStructure": "Password must be at least 8 characters long and include an uppercase letter, a number, and a special character",
+      "passwordsDiffer": "Passwords do not match"
+    }
+  },
+  "navigation": {
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "order": "Order",
+    "menu": "Menu",
+    "prizes": "Rewards",
+    "locations": "Locations"
+  },
+  "common": {
+    "emailAddress": "Email address",
+    "formErrors": {
+      "fieldRequired": "This field is required"
+    }
+  },
+  "signUpPage": {
+    "signUp": "Sign up",
+    "orderFasterTitle": "ORDER EVEN FASTER WITH A TEXAS TACO ACCOUNT",
+    "savePreferencesMessage": "Save preferences and delivery addresses",
+    "showOrdersHistoryMessage": "View order history",
+    "saveWithPrizesMessage": "Save more with rewards only for registered users",
+    "createAccount": "Create account"
+  },
+  "signInPage": {
+    "signIn": "SIGN IN",
+    "logIn": "Sign in"
+  }
+}

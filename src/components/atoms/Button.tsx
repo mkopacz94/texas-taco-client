@@ -14,14 +14,14 @@ export type ButtonVariant =
   | undefined;
 
 const buttonVariants = cva(
-  'cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-60 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-60 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         default: 'bg-amber-400 hover:bg-amber-300',
         destructive: 'bg-red-500 text-neutral-50 shadow-sm hover:bg-red-500/90',
         outline:
-          'border border-neutral-200 bg-white shadow-sm hover:bg-neutral-100 hover:text-neutral-900',
+          'border-2 border-neutral-800 bg-white shadow-sm hover:border-amber-400 hover:text-amber-400',
         secondary:
           'bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80',
         ghost: 'hover:bg-neutral-100 hover:text-neutral-900',

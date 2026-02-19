@@ -5,6 +5,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import MenuItems from './MenuItems';
 import DrawerMenu from './DrawerMenu';
 import UserMenu from './UserMenu';
+import LanguageSwitch from '@/components/molecules/localization/LanguageSwitch';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='w-full p-3 lg:p-6 grid grid-cols-3 border-b-neutral-200 border-b'>
+      <div className='w-full p-3 lg:p-6 grid grid-cols-3 bg-white border-b-neutral-200 border-b'>
         <div className='hidden lg:flex items-center'>
           <MenuItems />
         </div>
@@ -33,8 +34,9 @@ const Navbar = () => {
             <img src={appName} className='h-fit max-h-6' />
           </NavLink>
         </div>
-        <div className='justify-end hidden lg:flex'>
+        <div className='justify-end hidden lg:flex space-x-4'>
           <UserMenu />
+          <LanguageSwitch className='-mt-0.5' />
         </div>
       </div>
 

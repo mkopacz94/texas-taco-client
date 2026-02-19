@@ -23,10 +23,15 @@
     }
   },
   "signUpPage": {
+    "signUp": "Rejestracja",
     "orderFasterTitle": "ZAMAWIAJ JESZCZE SZYBCIEJ Z KONTEM TEXAS TACO",
     "savePreferencesMessage": "Zapisz preferencje i adres zamówień",
     "showOrdersHistoryMessage": "Wyświetlaj historię zamówień",
     "saveWithPrizesMessage": "Oszczędzaj więcej z nagrodami tylko dla zarejestrowanych użytkowników",
     "createAccount": "Utwórz konto"
+  },
+  "signInPage": {
+    "signIn": "LOGOWANIE",
+    "logIn": "Zaloguj się"
   }
 }
