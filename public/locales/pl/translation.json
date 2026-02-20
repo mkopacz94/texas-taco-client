@@ -32,6 +32,8 @@
   },
   "signInPage": {
     "signIn": "LOGOWANIE",
-    "logIn": "Zaloguj się"
+    "logIn": "Zaloguj się",
+    "newInTexasTaco": "Nowy w Texas Taco?",
+    "signUp": "Zarejestruj się"
   }
 }

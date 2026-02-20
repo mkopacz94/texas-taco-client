@@ -5,11 +5,12 @@ import { NavLink } from 'react-router-dom';
 interface NavbarLinkProps {
   path: string;
   content: string;
+  onClick?: () => void;
 }
 
-const NavbarLink: FC<NavbarLinkProps> = ({ path, content }) => {
+const NavbarLink: FC<NavbarLinkProps> = ({ path, content, onClick }) => {
   return (
-    <NavLink to={path}>
+    <NavLink to={path} onClick={onClick}>
       {({ isActive }) => (
         <div className='relative'>
           <Typography

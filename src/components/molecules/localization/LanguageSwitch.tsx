@@ -1,13 +1,7 @@
-import { useEffect, useState, type FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import plFlagImage from '@/assets/images/pl_flag.svg';
 import ukFlagImage from '@/assets/images/uk_flag.svg';
-import type { Language } from '@/types/localization/language';
-
-const languageMap: Record<Language, string> = {
-  Polish: 'pl',
-  English: 'en',
-};
+import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface LanguageSwitchProps {
   className?: string;
@@ -15,14 +9,11 @@ interface LanguageSwitchProps {
 
 const LanguageSwitch: FC<LanguageSwitchProps> = ({ className }) => {
   const { i18n } = useTranslation();
-  const [selectedLanguage, setSelectedLanguage] = useState<Language>('Polish');
 
-  useEffect(() => {
-    i18n.changeLanguage(languageMap[selectedLanguage]);
-  }, [selectedLanguage, i18n]);
+  const isPolish = i18n.language === 'pl';
 
   const changeLanguage = () => {
-    setSelectedLanguage((prev) => (prev === 'Polish' ? 'English' : 'Polish'));
+    i18n.changeLanguage(isPolish ? 'en' : 'pl');
   };
 
   return (
@@ -30,7 +21,7 @@ const LanguageSwitch: FC<LanguageSwitchProps> = ({ className }) => {
       onClick={changeLanguage}
       className={`${className} w-6 flex cursor-pointer`}
     >
-      <img src={selectedLanguage === 'Polish' ? ukFlagImage : plFlagImage} />
+      <img src={isPolish ? ukFlagImage : plFlagImage} />
     </div>
   );
 };

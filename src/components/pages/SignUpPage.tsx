@@ -5,7 +5,7 @@ const SignUpPage = () => {
   return (
     <div className='grid md:grid-cols-2 gap-8 md:gap-16 grid-cols-1 py-8'>
       <div className='flex md:justify-end justify-center'>
-        <div className='w-110'>
+        <div className='w-3/4 sm:w-110'>
           <SignUpBenefitsSummary />
         </div>
       </div>

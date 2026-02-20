@@ -32,6 +32,8 @@
   },
   "signInPage": {
     "signIn": "SIGN IN",
-    "logIn": "Sign in"
+    "logIn": "Sign in",
+    "newInTexasTaco": "New in Texas Taco?",
+    "signUp": "Sign up"
   }
 }

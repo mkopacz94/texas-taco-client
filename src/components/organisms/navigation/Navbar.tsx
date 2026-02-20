@@ -2,10 +2,9 @@ import appName from '@/assets/images/appName.png';
 import { Squash } from 'hamburger-react';
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import MenuItems from './MenuItems';
 import DrawerMenu from './DrawerMenu';
+import MenuItems from './MenuItems';
 import UserMenu from './UserMenu';
-import LanguageSwitch from '@/components/molecules/localization/LanguageSwitch';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +35,10 @@ const Navbar = () => {
         </div>
         <div className='justify-end hidden lg:flex space-x-4'>
           <UserMenu />
-          <LanguageSwitch className='-mt-0.5' />
         </div>
       </div>
 
-      {isOpen && <DrawerMenu />}
+      {isOpen && <DrawerMenu onClose={() => setIsOpen(false)} />}
     </>
   );
 };
