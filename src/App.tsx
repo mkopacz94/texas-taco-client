@@ -13,21 +13,24 @@ import LocationsPage from './components/pages/LocationsPage';
 import OrderPage from './components/pages/OrderPage';
 import HomePage from './components/pages/HomePage';
 import SignUpPage from './components/pages/SignUpPage';
+import { AuthContextProvider } from './context/AuthContextProvider';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path={SIGN_UP_PATH} element={<SignUpPage />} />
-          <Route path={ORDER_PATH} element={<OrderPage />} />
-          <Route path={MENU_PATH} element={<MenuPage />} />
-          <Route path={PRIZES_PATH} element={<PrizesPage />} />
-          <Route path={LOCATIONS_PATH} element={<LocationsPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path={SIGN_UP_PATH} element={<SignUpPage />} />
+            <Route path={ORDER_PATH} element={<OrderPage />} />
+            <Route path={MENU_PATH} element={<MenuPage />} />
+            <Route path={PRIZES_PATH} element={<PrizesPage />} />
+            <Route path={LOCATIONS_PATH} element={<LocationsPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthContextProvider>
   );
 }
 
