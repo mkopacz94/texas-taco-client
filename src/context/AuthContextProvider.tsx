@@ -54,6 +54,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     );
 
     setLoggedUser(userResponse.data);
+
+    console.log(loggedUser);
   };
 
   const logout = async () => {

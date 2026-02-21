@@ -14,23 +14,28 @@ import OrderPage from './components/pages/OrderPage';
 import HomePage from './components/pages/HomePage';
 import SignUpPage from './components/pages/SignUpPage';
 import { AuthContextProvider } from './context/AuthContextProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <AuthContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<MainLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path={SIGN_UP_PATH} element={<SignUpPage />} />
-            <Route path={ORDER_PATH} element={<OrderPage />} />
-            <Route path={MENU_PATH} element={<MenuPage />} />
-            <Route path={PRIZES_PATH} element={<PrizesPage />} />
-            <Route path={LOCATIONS_PATH} element={<LocationsPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<MainLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path={SIGN_UP_PATH} element={<SignUpPage />} />
+              <Route path={ORDER_PATH} element={<OrderPage />} />
+              <Route path={MENU_PATH} element={<MenuPage />} />
+              <Route path={PRIZES_PATH} element={<PrizesPage />} />
+              <Route path={LOCATIONS_PATH} element={<LocationsPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthContextProvider>
+    </QueryClientProvider>
   );
 }
 

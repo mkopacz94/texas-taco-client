@@ -10,10 +10,12 @@ import type { FC } from 'react';
 
 interface SignInDialogContentProps {
   onSignUpClicked?: () => void;
+  onSignedIn?: () => void;
 }
 
 const SignInDialogContent: FC<SignInDialogContentProps> = ({
   onSignUpClicked,
+  onSignedIn,
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ const SignInDialogContent: FC<SignInDialogContentProps> = ({
     <div className='sm:m-4 flex sm:space-x-8'>
       <div className='grow sm:w-1/2 bg-white p-8 rounded-2xl sm:shadow-lg flex sm:items-center'>
         <div className='w-full'>
-          <SignInForm />
+          <SignInForm onSignedIn={onSignedIn} />
           <div className='sm:hidden flex justify-center mt-6'>
             <Typography size='sm' className='flex items-center'>
               {t('signInPage.newInTexasTaco')}
