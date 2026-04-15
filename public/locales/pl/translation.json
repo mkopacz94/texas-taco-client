@@ -20,7 +20,8 @@
     "emailAddress": "Adres e-mail",
     "formErrors": {
       "fieldRequired": "Wartość w polu jest wymagana"
-    }
+    },
+    "close": "Zamknij"
   },
   "signUpPage": {
     "signUp": "Rejestracja",
@@ -28,12 +29,16 @@
     "savePreferencesMessage": "Zapisz preferencje i adres zamówień",
     "showOrdersHistoryMessage": "Wyświetlaj historię zamówień",
     "saveWithPrizesMessage": "Oszczędzaj więcej z nagrodami tylko dla zarejestrowanych użytkowników",
-    "createAccount": "Utwórz konto"
+    "createAccount": "Utwórz konto",
+    "signUpError": "Błąd rejestracji"
   },
   "signInPage": {
     "signIn": "LOGOWANIE",
     "logIn": "Zaloguj się",
     "newInTexasTaco": "Nowy w Texas Taco?",
     "signUp": "Zarejestruj się"
+  },
+  "errors": {
+    "email_already_exists": "Ten adres e-mail jest już zarejestrowany."
   }
 }
