@@ -1,18 +1,17 @@
-import { CircleCheck, CircleX } from 'lucide-react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Button } from '../atoms/Button';
-import Typography from '../atoms/Typography';
-import { useMutation } from '@tanstack/react-query';
-import api from '@/lib/axios';
-import { useEffect } from 'react';
-import Lottie from 'lottie-react';
 import loadingAnimation from '@/assets/animations/loading_indicator.json';
+import api from '@/lib/axios';
 import { getErrorCodeFromResponse } from '@/utils/getErrorCodeFromResponse';
 import { getErrorMessage } from '@/utils/translateErrorCode';
+import { useMutation } from '@tanstack/react-query';
+import Lottie from 'lottie-react';
+import { CircleCheck, CircleX } from 'lucide-react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
+import Typography from '../atoms/Typography';
+import BackToHomeButton from '../molecules/BackToHomeButton';
 
 const VerificationPage = () => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
 
@@ -65,12 +64,7 @@ const VerificationPage = () => {
             <Typography> {t('verifyPage.success')}</Typography>
           </div>
 
-          <Button>
-            <Typography weight='medium'>
-              {' '}
-              {t('verifyPage.backToHome')}
-            </Typography>
-          </Button>
+          <BackToHomeButton />
         </div>
       )}
 
@@ -84,11 +78,7 @@ const VerificationPage = () => {
             </Typography>
           </div>
 
-          <Button onClick={() => navigate('/')}>
-            <Typography weight='medium'>
-              {t('verifyPage.backToHome')}
-            </Typography>
-          </Button>
+          <BackToHomeButton />
         </div>
       )}
     </div>

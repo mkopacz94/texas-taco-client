@@ -49,6 +49,7 @@
     "email_already_exists": "This email is already registered.",
     "verification_token_expired": "Verification link has expired",
     "account_associated_with_token_not_found": "No account found for this verification link",
-    "account_already_verified": "This account has already been verified"
+    "account_already_verified": "This account has already been verified",
+    "unknown_error": "Unknown error"
   }
 }

@@ -49,6 +49,7 @@
     "email_already_exists": "Ten adres e-mail jest już zarejestrowany",
     "verification_token_expired": "Link weryfikacyjny wygasł",
     "account_associated_with_token_not_found": "Konto powiązane z linkiem nie zostało znalezione",
-    "account_already_verified": "Konto zostało już zweryfikowane"
+    "account_already_verified": "Konto zostało już zweryfikowane",
+    "unknown_error": "Nieokreślony błąd"
   }
 }
