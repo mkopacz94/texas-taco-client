@@ -32,6 +32,13 @@
     "createAccount": "Utwórz konto",
     "signUpError": "Błąd rejestracji"
   },
+  "verifyPage": {
+    "accountVerification": "Weryfikacja konta",
+    "verificationPending": "Trwa weryfikacja konta",
+    "failed": "Wystąpił błąd podczas weryfikacji konta",
+    "backToHome": "Wróć do strony głównej",
+    "success": "Twoje konto zostało pomyślnie zweryfikowane"
+  },
   "signInPage": {
     "signIn": "LOGOWANIE",
     "logIn": "Zaloguj się",
@@ -39,6 +46,9 @@
     "signUp": "Zarejestruj się"
   },
   "errors": {
-    "email_already_exists": "Ten adres e-mail jest już zarejestrowany."
+    "email_already_exists": "Ten adres e-mail jest już zarejestrowany",
+    "verification_token_expired": "Link weryfikacyjny wygasł",
+    "account_associated_with_token_not_found": "Konto powiązane z linkiem nie zostało znalezione",
+    "account_already_verified": "Konto zostało już zweryfikowane"
   }
 }

@@ -32,6 +32,13 @@
     "createAccount": "Create account",
     "signUpError": "Sign up failed"
   },
+  "verifyPage": {
+    "accountVerification": "Account verification",
+    "verificationPending": "Verifying account",
+    "failed": "An error occurred while verifying the account",
+    "backToHome": "Back to home page",
+    "success": "Your account has been successfully verified"
+  },
   "signInPage": {
     "signIn": "SIGN IN",
     "logIn": "Sign in",
@@ -39,6 +46,9 @@
     "signUp": "Sign up"
   },
   "errors": {
-    "email_already_exists": "This email is already registered."
+    "email_already_exists": "This email is already registered.",
+    "verification_token_expired": "Verification link has expired",
+    "account_associated_with_token_not_found": "No account found for this verification link",
+    "account_already_verified": "This account has already been verified"
   }
 }

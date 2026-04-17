@@ -38,8 +38,8 @@ const SignUpForm = () => {
   const passwordValue = watch('password');
 
   const signUpMutation = useMutation({
-    mutationFn: ({ email, password }: SignUpFormData) =>
-      api.post('/v1/auth/sign-up', { email, password }),
+    mutationFn: async ({ email, password }: SignUpFormData) =>
+      await api.post('/v1/auth/sign-up', { email, password }),
 
     onError: (error: any) => {
       setIsErrorModelOpen(true);
