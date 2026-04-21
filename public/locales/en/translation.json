@@ -30,7 +30,11 @@
     "showOrdersHistoryMessage": "View order history",
     "saveWithPrizesMessage": "Save more with rewards only for registered users",
     "createAccount": "Create account",
-    "signUpError": "Sign up failed"
+    "signUpError": "Sign up failed",
+    "success": {
+      "title": "Check your email",
+      "message": "We’ve sent you a verification link. Click it to activate your account."
+    }
   },
   "verifyPage": {
     "accountVerification": "Account verification",

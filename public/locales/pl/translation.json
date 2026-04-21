@@ -30,7 +30,11 @@
     "showOrdersHistoryMessage": "Wyświetlaj historię zamówień",
     "saveWithPrizesMessage": "Oszczędzaj więcej z nagrodami tylko dla zarejestrowanych użytkowników",
     "createAccount": "Utwórz konto",
-    "signUpError": "Błąd rejestracji"
+    "signUpError": "Błąd rejestracji",
+    "success": {
+      "title": "Sprawdź swój adres e-mail",
+      "message": "Na Twój adres e-mail wysłany został link weryfikacyjny. Kliknij go, aby aktywować swoje konto."
+    }
   },
   "verifyPage": {
     "accountVerification": "Weryfikacja konta",

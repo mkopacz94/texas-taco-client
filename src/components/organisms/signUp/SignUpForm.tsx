@@ -1,15 +1,19 @@
+import { Dialog, DialogContent } from '@/components/atoms/Dialog';
 import LoadingButton from '@/components/atoms/LoadingButton';
 import Typography from '@/components/atoms/Typography';
 import InputWithLabel from '@/components/molecules/InputWithLabel';
-import api from '@/lib/axios';
-import { useMutation } from '@tanstack/react-query';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 import ErrorModal, {
   type ErrorModalData,
 } from '@/components/organisms/ErrorModal';
-import { useState } from 'react';
+import api from '@/lib/axios';
+import type { ApiError } from '@/types/common/ApiError';
 import { getErrorMessage } from '@/utils/translateErrorCode';
+import { useMutation } from '@tanstack/react-query';
+import type { AxiosError } from 'axios';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import SignUpSucceededDialogContent from './SignUpSucceededDialogContent';
 
 interface SignUpFormData {
   email: string;
@@ -19,6 +23,7 @@ interface SignUpFormData {
 
 const SignUpForm = () => {
   const { t } = useTranslation();
+  const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
   const [isErrorModelOpen, setIsErrorModelOpen] = useState(false);
   const [errorData, setErrorData] = useState<ErrorModalData>({
     title: '',
@@ -40,10 +45,11 @@ const SignUpForm = () => {
   const signUpMutation = useMutation({
     mutationFn: async ({ email, password }: SignUpFormData) =>
       await api.post('/v1/auth/sign-up', { email, password }),
-
-    onError: (error: any) => {
+    onSuccess: () => {
+      setIsSuccessDialogOpen(true);
+    },
+    onError: (error: AxiosError<ApiError>) => {
       setIsErrorModelOpen(true);
-
       const data = error.response?.data;
       setErrorData({
         title: t('signUpPage.signUpError'),
@@ -55,7 +61,7 @@ const SignUpForm = () => {
   const onSubmit = async (data: SignUpFormData) => {
     try {
       await signUpMutation.mutateAsync(data);
-    } catch (error) {
+    } catch {
       //Handled in onError
     }
   };
@@ -120,6 +126,11 @@ const SignUpForm = () => {
         title={errorData.title}
         message={errorData.message}
       />
+      <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
+        <DialogContent className='w-[40%] p-10'>
+          <SignUpSucceededDialogContent />
+        </DialogContent>
+      </Dialog>
     </>
   );
 };

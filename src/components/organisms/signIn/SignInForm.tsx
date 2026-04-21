@@ -51,8 +51,6 @@ const SignInForm: FC<SignInFormProps> = ({ onSignedIn }) => {
       return login(email, password);
     },
     onSuccess: () => {
-      console.log('Signed in succesfully!');
-
       if (onSignedIn) {
         onSignedIn();
       }

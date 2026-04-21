@@ -17,6 +17,11 @@ const VerificationPage = () => {
 
   const token = searchParams.get('token');
 
+  const verifyMutation = useMutation({
+    mutationFn: async (token: string) =>
+      await api.post('/v1/auth/verify', null, { params: { token } }),
+  });
+
   useEffect(() => {
     const run = async () => {
       if (!token) return;
@@ -30,12 +35,7 @@ const VerificationPage = () => {
     };
 
     run();
-  }, [token]);
-
-  const verifyMutation = useMutation({
-    mutationFn: async (token: string) =>
-      await api.post('/v1/auth/verify', null, { params: { token } }),
-  });
+  }, [token, verifyMutation]);
 
   return (
     <div className='flex justify-center items-center h-dvh -mt-4'>
